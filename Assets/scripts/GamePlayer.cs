@@ -17,6 +17,8 @@ public class GamePlayer : NetworkBehaviour
     [SyncVar] public bool IsGameLeader = false;
     [SyncVar(hook = nameof(HandlePlayerReadyStatusChange))] public bool isPlayerReady;
     [SyncVar] public ulong playerSteamId;
+    [Header("Player")]
+    public GameObject playerObject;
 
     private MyNetworkManager game;
     private MyNetworkManager Game
@@ -58,7 +60,7 @@ public class GamePlayer : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        playerObject.SetActive(SceneManager.GetActiveScene().name == "Game");
     }
     public void HandlePlayerNameUpdate(string oldValue, string newValue)
     {
