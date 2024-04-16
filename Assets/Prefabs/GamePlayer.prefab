@@ -80,10 +80,40 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6141406830019278474}
     m_Modifications:
+    - target: {fileID: 2128598812237261823, guid: c494dee839f12164d8d3b5d5b925bce4,
+        type: 3}
+      propertyPath: mouseSensitivity
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 5598361900936662947, guid: c494dee839f12164d8d3b5d5b925bce4,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877337439686083999, guid: c494dee839f12164d8d3b5d5b925bce4,
+        type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877337439686083999, guid: c494dee839f12164d8d3b5d5b925bce4,
+        type: 3}
+      propertyPath: gravity
+      value: -19.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877337439686083999, guid: c494dee839f12164d8d3b5d5b925bce4,
+        type: 3}
+      propertyPath: runSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877337439686083999, guid: c494dee839f12164d8d3b5d5b925bce4,
+        type: 3}
+      propertyPath: jumpHeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877337439686083999, guid: c494dee839f12164d8d3b5d5b925bce4,
+        type: 3}
+      propertyPath: normalSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8292091893272052953, guid: c494dee839f12164d8d3b5d5b925bce4,
         type: 3}
