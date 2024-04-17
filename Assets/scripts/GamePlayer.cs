@@ -19,6 +19,10 @@ public class GamePlayer : NetworkBehaviour
     [SyncVar] public ulong playerSteamId;
     [Header("Player")]
     public GameObject playerObject;
+    
+    [Header("Spawn")]
+    private bool spawnInGame; 
+    public Vector3 spawnPoint;
 
     private MyNetworkManager game;
     private MyNetworkManager Game
@@ -60,6 +64,10 @@ public class GamePlayer : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(SceneManager.GetActiveScene().name == "Game" && !spawnInGame){
+            spawnInGame = true;
+            SpawnInGame(spawnPoint);
+        }
         playerObject.SetActive(SceneManager.GetActiveScene().name == "Game");
     }
     public void HandlePlayerNameUpdate(string oldValue, string newValue)
@@ -131,5 +139,10 @@ public class GamePlayer : NetworkBehaviour
         Game.GamePlayers.Remove(this);
         Debug.Log("Removed player from the GamePlayer list: " + this.playerName);
         LobbyManager.instance.UpdateUI();
+    }
+
+    public void SpawnInGame(Vector3 t){
+        playerObject.transform.position = t;
+        Debug.Log(playerObject.transform.position);
     }
 }

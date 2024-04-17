@@ -72,6 +72,7 @@ MonoBehaviour:
   isPlayerReady: 0
   playerSteamId: 0
   playerObject: {fileID: 7094090337861259637}
+  spawnPoint: {x: 0, y: 100, z: 0}
 --- !u!1001 &3441354774994837206
 PrefabInstance:
   m_ObjectHideFlags: 0
