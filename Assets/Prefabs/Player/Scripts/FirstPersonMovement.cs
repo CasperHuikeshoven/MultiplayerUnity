@@ -9,7 +9,7 @@ public class FirstPersonMovement : MonoBehaviour
     public CharacterController controller; 
 
     [Header("Speed")]
-    public float speed = 12f; 
+    float speed = 12f; 
     public float runSpeed = 12f; 
     public float normalSpeed = 6f; 
 
@@ -23,19 +23,28 @@ public class FirstPersonMovement : MonoBehaviour
     public Transform groundCheck; 
     public float groundDistance = 0.4f; 
     public LayerMask groundMask; 
+    bool isGrounded; 
+
+    [Header("Key Inputs")]
+    public string forwardKey;
+    public string backKey;
+    public string leftKey;
+    public string rightKey;
+    public string jumpKey;
+    public string sprintKey;
+    public string crouchKey;
 
     Vector3 velocity; 
-    public bool isGrounded; 
-
-    private bool spawnYN = true; 
-
-    private void Start(){
-        
-    }
-
-    // Update is called once per frame
+    
     private void Update()
     {
+
+        Movement();
+
+    }
+
+    private void Movement(){
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0){
@@ -43,21 +52,19 @@ public class FirstPersonMovement : MonoBehaviour
         }
 
         //Crouch
-        if(!Input.GetKey(KeyCode.LeftControl)){
+        if(!Input.GetKey(crouchKey)){
             controller.height = normalHeight;
         }
-        if(Input.GetKey(KeyCode.LeftControl)){
+        if(Input.GetKey(crouchKey)){
             controller.height = normalHeight*crouchHeight;
         }
 
         //Sprint
-        if(!Input.GetKey(KeyCode.LeftShift)){
+        if(!Input.GetKey(sprintKey)){
             speed = normalSpeed;
-            Debug.Log(speed);
         }
-        if(Input.GetKey(KeyCode.LeftShift) && isGrounded){
+        if(Input.GetKey(sprintKey) && isGrounded){
             speed = runSpeed;
-                    Debug.Log(speed);
         }
     
         float x = Input.GetAxis("Horizontal");
@@ -67,7 +74,7 @@ public class FirstPersonMovement : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
-        if(Input.GetButtonDown("Jump") && isGrounded){
+        if(Input.GetKey(jumpKey) && isGrounded){
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
@@ -75,6 +82,5 @@ public class FirstPersonMovement : MonoBehaviour
                 
         controller.Move(velocity * Time.deltaTime);
 
-        
     }
 }

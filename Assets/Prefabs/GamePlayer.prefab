@@ -98,13 +98,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7877337439686083999, guid: c494dee839f12164d8d3b5d5b925bce4,
         type: 3}
+      propertyPath: backKey
+      value: s
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877337439686083999, guid: c494dee839f12164d8d3b5d5b925bce4,
+        type: 3}
       propertyPath: gravity
       value: -19.82
       objectReference: {fileID: 0}
     - target: {fileID: 7877337439686083999, guid: c494dee839f12164d8d3b5d5b925bce4,
         type: 3}
+      propertyPath: jumpKey
+      value: space
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877337439686083999, guid: c494dee839f12164d8d3b5d5b925bce4,
+        type: 3}
+      propertyPath: leftKey
+      value: a
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877337439686083999, guid: c494dee839f12164d8d3b5d5b925bce4,
+        type: 3}
+      propertyPath: rightKey
+      value: d
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877337439686083999, guid: c494dee839f12164d8d3b5d5b925bce4,
+        type: 3}
       propertyPath: runSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877337439686083999, guid: c494dee839f12164d8d3b5d5b925bce4,
+        type: 3}
+      propertyPath: crouchKey
+      value: left ctrl
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877337439686083999, guid: c494dee839f12164d8d3b5d5b925bce4,
+        type: 3}
+      propertyPath: sprintKey
+      value: left shift
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877337439686083999, guid: c494dee839f12164d8d3b5d5b925bce4,
+        type: 3}
+      propertyPath: forwardKey
+      value: w
       objectReference: {fileID: 0}
     - target: {fileID: 7877337439686083999, guid: c494dee839f12164d8d3b5d5b925bce4,
         type: 3}
