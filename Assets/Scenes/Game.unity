@@ -487,10 +487,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86afa6f938d717e4b8e681c06cfc4373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapWidth: 100
-  mapHeight: 100
-  noiseScale: 12.04
+  drawMode: 1
+  island: 1
+  mapWidth: 240
+  mapHeight: 240
+  noiseScale: 35
+  octaves: 4
+  persistance: 0.5
+  lacunarity: 1.87
+  seed: 0
+  offset: {x: 0, y: 0}
   autoUpdate: 1
+  regions:
+  - name: Deep Water
+    height: 0.2
+    colour: {r: 0, g: 0.08579803, b: 0.4433962, a: 0}
+  - name: Water
+    height: 0.4
+    colour: {r: 0, g: 0.33343455, b: 0.8301887, a: 0}
+  - name: Beach
+    height: 0.45
+    colour: {r: 1, g: 0.7715285, b: 0.4009434, a: 0}
+  - name: Low Land
+    height: 0.6
+    colour: {r: 0.13402462, g: 0.764151, b: 0, a: 0}
+  - name: High Land
+    height: 0.7
+    colour: {r: 0, g: 0.46226418, b: 0.0090444675, a: 0}
+  - name: Rock
+    height: 0.8
+    colour: {r: 0.4528302, g: 0.35535848, b: 0.33962265, a: 0}
+  - name: Stone
+    height: 0.9
+    colour: {r: 0.31132078, g: 0.2011837, b: 0.2011837, a: 0}
+  - name: Snow
+    height: 1
+    colour: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1001 &597210676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1893,7 +1925,8 @@ GameObject:
   - component: {fileID: 1629021960}
   - component: {fileID: 1629021962}
   - component: {fileID: 1629021961}
-  m_Layer: 0
+  - component: {fileID: 1629021963}
+  m_Layer: 3
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1910,7 +1943,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 1, z: 100}
+  m_LocalScale: {x: 240, y: 1, z: 240}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 735740655}
@@ -1964,6 +1997,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629021959}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &1629021963
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629021959}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1705490576
 PrefabInstance:
