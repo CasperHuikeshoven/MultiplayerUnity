@@ -23,7 +23,7 @@ public static class FalloffGenerator
 
     static float Evaluate(float value){
         float a = 3f; 
-        float b = 3f;
+        float b = 4f;
 
         return Mathf.Pow(value, a) / (Mathf.Pow(value, a) + Mathf.Pow(b-b*value, a));
     }

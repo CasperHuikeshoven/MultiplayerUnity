@@ -5,7 +5,7 @@ using UnityEngine;
 public class MapGenerator : MonoBehaviour
 {
 
-    public enum DrawMode {NoiseMap, ColourMap, FalloffMap};
+    public enum DrawMode {NoiseMap, ColourMap, FalloffMap, Mesh};
     public DrawMode drawMode;
     public bool island;
 
@@ -17,6 +17,9 @@ public class MapGenerator : MonoBehaviour
     [Range(0,1)]
     public float persistance;
     public float lacunarity;
+
+    public float heightMultiplier;
+    public AnimationCurve meshHeightCurve;
 
     public int seed;
     public Vector2 offset;
@@ -30,13 +33,13 @@ public class MapGenerator : MonoBehaviour
     }
 
     public void GenerateMap(){
-        float[,] noiseMap = Noise.GenerateNoiseMap(mapWidth, mapHeight, seed, noiseScale, octaves, persistance, lacunarity, offset, island);
         float[,] falloffMap = FalloffGenerator.GenerateFallOffMap(mapWidth);
+        float[,] noiseMap = Noise.GenerateNoiseMap(mapWidth, mapHeight, seed, noiseScale, octaves, persistance, lacunarity, offset, island, falloffMap);
         Color[] colourMap = new Color[mapWidth * mapHeight];
         for(int y = 0; y < mapHeight; y++){
             for(int x = 0; x < mapWidth; x++){
+                if(island) Mathf.Clamp01(noiseMap[x,y] -= falloffMap[x,y]);
                 float currentHeight = noiseMap[x,y];
-                if(island) currentHeight -= falloffMap[x,y];
                 for(int i = 0; i < regions.Length; i++){
                     if(currentHeight <= regions[i].height){
                         colourMap[y * mapWidth + x] = regions [i].colour;
@@ -53,6 +56,8 @@ public class MapGenerator : MonoBehaviour
             display.DrawTexture(TextureGenerator.TextureFromColourMap(colourMap, mapWidth, mapHeight));
         } else if(drawMode == DrawMode.FalloffMap){
             display.DrawTexture(TextureGenerator.TextureFromHeightMap(FalloffGenerator.GenerateFallOffMap(mapWidth)));
+        } else if(drawMode == DrawMode.Mesh){
+            display.DrawMesh(MeshGenerator.GenerateTerrainMesh(noiseMap, heightMultiplier, meshHeightCurve), TextureGenerator.TextureFromColourMap(colourMap, mapWidth, mapHeight));
         }
         
     }
