@@ -19,23 +19,50 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.0051761493
-      value: -0.029914007
-      inSlope: -0.11544622
-      outSlope: -0.11544622
+      time: -0.0038452148
+      value: 0.05895996
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.3959776
+      outWeight: 0
     - serializedVersion: 3
-      time: 0.2525645
-      value: 0.037905972
-      inSlope: -0.02650459
-      outSlope: -0.02650459
+      time: 0.044130594
+      value: 0.096628636
+      inSlope: -0.11631098
+      outSlope: -0.11631098
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.37048337
-      outWeight: 0.12906404
+      inWeight: 0.33333334
+      outWeight: 0.96002793
+    - serializedVersion: 3
+      time: 0.13330892
+      value: 0.09516619
+      inSlope: 0.831653
+      outSlope: 0.831653
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.3329547
+      value: 0.15596196
+      inSlope: 0.018247623
+      outSlope: 0.018247623
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.42995447
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6969813
+      value: 0.3222592
+      inSlope: 0.59277236
+      outSlope: 0.59277236
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.26588118
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 1
@@ -50,34 +77,56 @@ MonoBehaviour:
     m_RotationOrder: 4
   noiseScale: 40
   octaves: 5
-  persistance: 0.5
+  persistance: 0.433
   lacunarity: 1.87
-  seed: 0
+  seed: 7
   offset: {x: 0, y: 0}
-  baseColours:
-  - {r: 0, g: 0.10661459, b: 1, a: 0}
-  - {r: 0, g: 0.4847312, b: 1, a: 0}
-  - {r: 0.8679245, g: 0.7329575, b: 0.43805626, a: 0}
-  - {r: 0.036995023, g: 0.6886792, b: 0, a: 0}
-  - {r: 0.036243223, g: 0.4245283, b: 0, a: 0}
-  - {r: 0.4245283, g: 0.3428573, b: 0.3183962, a: 0}
-  - {r: 0.23584908, g: 0.17989488, b: 0.17688681, a: 0}
-  - {r: 1, g: 1, b: 1, a: 0}
-  baseStartHeights:
-  - 0
-  - 0.001
-  - 0.02
-  - 0.06
-  - 0.199
-  - 0.342
-  - 0.615
-  - 0.783
-  baseBlends:
-  - 0
-  - 0.017
-  - 0.029
-  - 0.006
-  - 0.126
-  - 0.184
-  - 0.149
-  - 0.046
+  layers:
+  - texture: {fileID: 2800000, guid: ce6d246e2de06e949905db30fc8ebf8e, type: 3}
+    tint: {r: 0, g: 0.1812067, b: 1, a: 0}
+    tintStrength: 0.047
+    startHeight: 0
+    blendStrength: 0
+    textureScale: 34.1
+  - texture: {fileID: 2800000, guid: ce6d246e2de06e949905db30fc8ebf8e, type: 3}
+    tint: {r: 0, g: 0.4635818, b: 1, a: 0}
+    tintStrength: 0.054
+    startHeight: 0.027
+    blendStrength: 0
+    textureScale: 38.11
+  - texture: {fileID: 2800000, guid: 373cc898f9e1f1a468180bb204bad2fc, type: 3}
+    tint: {r: 1, g: 0.90331656, b: 0.6273585, a: 0}
+    tintStrength: 0.391
+    startHeight: 0.061
+    blendStrength: 0.014
+    textureScale: 22.4
+  - texture: {fileID: 2800000, guid: d70c805e99621d040bf50bcf4fde8758, type: 3}
+    tint: {r: 0.107536726, g: 0.5283019, b: 0.012459949, a: 0}
+    tintStrength: 0.074
+    startHeight: 0.101
+    blendStrength: 0.027
+    textureScale: 23.2
+  - texture: {fileID: 2800000, guid: d70c805e99621d040bf50bcf4fde8758, type: 3}
+    tint: {r: 0.096049786, g: 0.4433962, b: 0.01464045, a: 0}
+    tintStrength: 0.054
+    startHeight: 0.264
+    blendStrength: 0.514
+    textureScale: 18.7
+  - texture: {fileID: 2800000, guid: 141d5c7e6e509a542b7089dd0e374217, type: 3}
+    tint: {r: 0.7429357, g: 0.35635456, b: 0.9811321, a: 0}
+    tintStrength: 0.703
+    startHeight: 0.27
+    blendStrength: 0.169
+    textureScale: 21.1
+  - texture: {fileID: 2800000, guid: b29ea19bf20779841a5be8745c94a425, type: 3}
+    tint: {r: 0.23367493, g: 0, b: 0.5471698, a: 0}
+    tintStrength: 0.764
+    startHeight: 0.588
+    blendStrength: 0.162
+    textureScale: 19.96
+  - texture: {fileID: 2800000, guid: a50fea752e08b074c99c3c2411e1c6c1, type: 3}
+    tint: {r: 0.518022, g: 0, b: 0.9339623, a: 0}
+    tintStrength: 0.764
+    startHeight: 0.838
+    blendStrength: 0.068
+    textureScale: 19.28
