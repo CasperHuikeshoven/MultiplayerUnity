@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c636d97cb18754eb033fc8e35f07f4, type: 3}
+  m_Name: TerrainData
+  m_EditorClassIdentifier: 
+  island: 1
+  size: 240
+  heightMultiplier: 25
+  meshHeightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.0051761493
+      value: -0.029914007
+      inSlope: -0.11544622
+      outSlope: -0.11544622
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.3959776
+    - serializedVersion: 3
+      time: 0.2525645
+      value: 0.037905972
+      inSlope: -0.02650459
+      outSlope: -0.02650459
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.37048337
+      outWeight: 0.12906404
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  noiseScale: 40
+  octaves: 5
+  persistance: 0.5
+  lacunarity: 1.87
+  seed: 0
+  offset: {x: 0, y: 0}
+  baseColours:
+  - {r: 0, g: 0.10661459, b: 1, a: 0}
+  - {r: 0, g: 0.4847312, b: 1, a: 0}
+  - {r: 0.8679245, g: 0.7329575, b: 0.43805626, a: 0}
+  - {r: 0.036995023, g: 0.6886792, b: 0, a: 0}
+  - {r: 0.036243223, g: 0.4245283, b: 0, a: 0}
+  - {r: 0.4245283, g: 0.3428573, b: 0.3183962, a: 0}
+  - {r: 0.23584908, g: 0.17989488, b: 0.17688681, a: 0}
+  - {r: 1, g: 1, b: 1, a: 0}
+  baseStartHeights:
+  - 0
+  - 0.001
+  - 0.02
+  - 0.06
+  - 0.199
+  - 0.342
+  - 0.615
+  - 0.783
+  baseBlends:
+  - 0
+  - 0.017
+  - 0.029
+  - 0.006
+  - 0.126
+  - 0.184
+  - 0.149
+  - 0.046
