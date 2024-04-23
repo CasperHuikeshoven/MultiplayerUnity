@@ -67,8 +67,9 @@ public class MainMenuManager : MonoBehaviour
             Debug.Log("CreateNewLobby: friendsOnlyToggle is OFF. Making lobby public.");
             newLobbyType = ELobbyType.k_ELobbyTypePublic;
         }
-        
-        lobbyName = "UnityMultiplayerGame";
+
+        lobbyName = "huts";
+        didPlayerNameTheLobby = true;
         SteamLobby.instance.CreateNewLobby(newLobbyType);
     }
     public void GetListOfLobbies()
@@ -83,7 +84,7 @@ public class MainMenuManager : MonoBehaviour
     {
         for (int i = 0; i < lobbyIDS.Count; i++)
         {
-            if (lobbyIDS[i].m_SteamID == result.m_ulSteamIDLobby && SteamMatchmaking.GetLobbyData((CSteamID)lobbyIDS[i].m_SteamID, "name") == "UnityMultiplayerGame")
+            if (lobbyIDS[i].m_SteamID == result.m_ulSteamIDLobby && SteamMatchmaking.GetLobbyData((CSteamID)lobbyIDS[i].m_SteamID, "name") == "huts")
             {
                 Debug.Log("Lobby " + i + " :: " + SteamMatchmaking.GetLobbyData((CSteamID)lobbyIDS[i].m_SteamID, "name") + " number of players: " + SteamMatchmaking.GetNumLobbyMembers((CSteamID)lobbyIDS[i].m_SteamID).ToString() + " max players: " + SteamMatchmaking.GetLobbyMemberLimit((CSteamID)lobbyIDS[i].m_SteamID).ToString());
 
