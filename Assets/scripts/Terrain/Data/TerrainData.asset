@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c636d97cb18754eb033fc8e35f07f4, type: 3}
+  m_Name: TerrainData
+  m_EditorClassIdentifier: 
+  island: 1
+  size: 240
+  heightMultiplier: 25
+  meshHeightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.0038452148
+      value: 0.05895996
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.044130594
+      value: 0.096628636
+      inSlope: -0.11631098
+      outSlope: -0.11631098
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.96002793
+    - serializedVersion: 3
+      time: 0.13330892
+      value: 0.09516619
+      inSlope: 0.831653
+      outSlope: 0.831653
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.3329547
+      value: 0.15596196
+      inSlope: 0.018247623
+      outSlope: 0.018247623
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.42995447
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6969813
+      value: 0.3222592
+      inSlope: 0.59277236
+      outSlope: 0.59277236
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.26588118
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  noiseScale: 40
+  octaves: 5
+  persistance: 0.433
+  lacunarity: 1.87
+  seed: 20
+  offset: {x: 0, y: 0}
+  layers:
+  - texture: {fileID: 2800000, guid: 9cfb42e6bded24843ba2e24205278136, type: 3}
+    tint: {r: 0, g: 0.1812067, b: 1, a: 0}
+    tintStrength: 0.047
+    startHeight: 0
+    blendStrength: 0
+    textureScale: 34.1
+  - texture: {fileID: 2800000, guid: 9cfb42e6bded24843ba2e24205278136, type: 3}
+    tint: {r: 0, g: 0.4635818, b: 1, a: 0}
+    tintStrength: 0.054
+    startHeight: 0.027
+    blendStrength: 0
+    textureScale: 38.11
+  - texture: {fileID: 2800000, guid: 6007a06cef6ce1b41a707402f747a337, type: 3}
+    tint: {r: 1, g: 0.90331656, b: 0.6273585, a: 0}
+    tintStrength: 0.391
+    startHeight: 0.061
+    blendStrength: 0.014
+    textureScale: 22.4
+  - texture: {fileID: 2800000, guid: 6259a1561eb089943a81f3469984e260, type: 3}
+    tint: {r: 0.17324181, g: 0.9528302, b: 0, a: 0}
+    tintStrength: 0.24
+    startHeight: 0.101
+    blendStrength: 0.027
+    textureScale: 23.2
+  - texture: {fileID: 2800000, guid: 6259a1561eb089943a81f3469984e260, type: 3}
+    tint: {r: 0.11943915, g: 0.6509434, b: 0, a: 0}
+    tintStrength: 0.212
+    startHeight: 0.264
+    blendStrength: 0.514
+    textureScale: 18.7
+  - texture: {fileID: 2800000, guid: fecbe7b2722d6654887b3c84329f6712, type: 3}
+    tint: {r: 0.6132076, g: 0.35752872, b: 0.2747864, a: 0}
+    tintStrength: 0.703
+    startHeight: 0.27
+    blendStrength: 0.169
+    textureScale: 21.1
+  - texture: {fileID: 2800000, guid: 5e57c5d19e2b26c4ebdf1294cabfeddd, type: 3}
+    tint: {r: 0.3962264, g: 0.13410021, b: 0.11027056, a: 0}
+    tintStrength: 0.764
+    startHeight: 0.588
+    blendStrength: 0.162
+    textureScale: 19.96
+  - texture: {fileID: 2800000, guid: 062317817f3fccf4a902c141f5a67813, type: 3}
+    tint: {r: 1, g: 1, b: 1, a: 0}
+    tintStrength: 0.764
+    startHeight: 0.838
+    blendStrength: 0.068
+    textureScale: 19.28
