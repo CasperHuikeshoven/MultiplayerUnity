@@ -17,14 +17,16 @@ public class MapGenerator : MonoBehaviour
     public TerrainType[] regions;
 
     public GameObject[] trees;
-    public GameObject treesList;
+    public GameObject terrainList;
+    
 
     public void Start(){
         Invoke("GenerateMap", 1f);
     }
 
     public void GenerateMap(){
-        
+        GameObject treesList = new GameObject("TreesList");
+        treesList.transform.parent = terrainList.transform;
         terrainData.ApplyToMaterial(material);
         float[,] falloffMap = FalloffGenerator.GenerateFallOffMap(terrainData.size);
         float[,] noiseMap = Noise.GenerateNoiseMap(terrainData);
