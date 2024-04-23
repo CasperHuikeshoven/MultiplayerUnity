@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2309e5a15788974099794fed0533df5, type: 3}
   m_Name: TreeData
   m_EditorClassIdentifier: 
-  noiseScale: 30
-  octaves: 1
-  persistance: 0.721
-  lacunarity: 0.65
+  noiseScale: 2
+  octaves: 5
+  persistance: 1
+  lacunarity: 0.51
   seed: 0
   offset: {x: 0, y: 0}
   trees:
