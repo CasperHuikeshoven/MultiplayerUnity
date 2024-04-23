@@ -67,13 +67,7 @@ public class MainMenuManager : MonoBehaviour
             Debug.Log("CreateNewLobby: friendsOnlyToggle is OFF. Making lobby public.");
             newLobbyType = ELobbyType.k_ELobbyTypePublic;
         }
-
-        if (!string.IsNullOrEmpty(lobbyNameInputField.text))
-        {
-            Debug.Log("CreateNewLobby: player created a lobby name of: " + lobbyNameInputField.text);
-            didPlayerNameTheLobby = true;
-            lobbyName = lobbyNameInputField.text;
-        }
+        
         lobbyName = "UnityMultiplayerGame";
         SteamLobby.instance.CreateNewLobby(newLobbyType);
     }
