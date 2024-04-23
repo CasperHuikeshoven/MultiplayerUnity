@@ -5,7 +5,7 @@ using UnityEngine;
 public static class Noise 
 {
    
-    public static float[,] GenerateNoiseMap(TerrainData terrainData, float[,] falloffMap){
+    public static float[,] GenerateNoiseMap(TerrainData terrainData){
         float[,] noiseMap = new float[terrainData.size, terrainData.size];
 
         System.Random prng = new System.Random(terrainData.seed);

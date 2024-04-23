@@ -16,15 +16,26 @@ public class MapGenerator : MonoBehaviour
 
     public TerrainType[] regions;
 
+    public GameObject[] trees;
+    public GameObject treesList;
+
     public void Start(){
-        GenerateMap();
+        Invoke("GenerateMap", 1f);
     }
 
     public void GenerateMap(){
+        
         terrainData.ApplyToMaterial(material);
         float[,] falloffMap = FalloffGenerator.GenerateFallOffMap(terrainData.size);
-        float[,] noiseMap = Noise.GenerateNoiseMap(terrainData, falloffMap);
+        float[,] noiseMap = Noise.GenerateNoiseMap(terrainData);
         Color[] colourMap = new Color[terrainData.size * terrainData.size];
+
+        int width = noiseMap.GetLength(0);
+        int height = noiseMap.GetLength(1);
+
+        float topLeftX = (width - 1)/-2f;
+        float topLeftZ = (height -1)/2f;
+
         for(int y = 0; y < terrainData.size; y++){
             for(int x = 0; x < terrainData.size; x++){
                 if(terrainData.island) Mathf.Clamp01(noiseMap[x,y] -= falloffMap[x,y]);
@@ -35,8 +46,18 @@ public class MapGenerator : MonoBehaviour
                         break;
                     }
                 }
+                if(currentHeight >= regions[2].height && currentHeight <= regions[6].height &&Random.Range(0, 5) == 2){
+                    int randomIndex = Random.Range(0, trees.Length-1);
+                    float spawnPointY = terrainData.meshHeightCurve.Evaluate(noiseMap[x,y])*terrainData.heightMultiplier;
+                    Vector3 treeSpawnPoint = new Vector3 (topLeftX + x, terrainData.meshHeightCurve.Evaluate(noiseMap[x,y])*terrainData.heightMultiplier, topLeftZ - y);
+                    GameObject spawnedObject = Instantiate(trees[randomIndex], treeSpawnPoint*10, Quaternion.identity);
+                    spawnedObject.transform.parent = treesList.transform;
+                }
             }
         }
+
+        terrainData.UpdateMeshHeights(material, terrainData.minHeight, terrainData.maxHeight);
+        terrainData.ApplyToMaterial(material);
 
         MapDisplay display = FindObjectOfType<MapDisplay>();
         if(drawMode == DrawMode.NoiseMap){
@@ -49,7 +70,6 @@ public class MapGenerator : MonoBehaviour
             display.DrawMesh(MeshGenerator.GenerateTerrainMesh(noiseMap, terrainData.heightMultiplier, terrainData.meshHeightCurve));
         }
         
-        terrainData.UpdateMeshHeights(material, terrainData.minHeight, terrainData.maxHeight);
     }
 
 }

@@ -5,9 +5,11 @@ using UnityEngine;
 public class MapDisplay : MonoBehaviour
 {
     
+    public GameObject meshObject;
     public Renderer textureRender;
     public MeshFilter meshFilter;
     public MeshRenderer meshRenderer;
+    MeshCollider meshCollider;
 
     public void DrawTexture(Texture2D texture){
         textureRender.sharedMaterial.mainTexture = texture;
@@ -16,6 +18,7 @@ public class MapDisplay : MonoBehaviour
 
     public void DrawMesh(MeshData meshData){
         meshFilter.sharedMesh = meshData.CreateMesh();
+        meshCollider = meshObject.AddComponent<MeshCollider>();
     }
 
 }
