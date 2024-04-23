@@ -18,7 +18,7 @@ public class GamePlayer : NetworkBehaviour
     [SyncVar(hook = nameof(HandlePlayerReadyStatusChange))] public bool isPlayerReady;
     [SyncVar] public ulong playerSteamId;
     [Header("Player")]
-    public GameObject playerObject;
+    public Camera camera;
     
     [Header("Spawn")]
     private bool spawnInGame; 
@@ -59,16 +59,20 @@ public class GamePlayer : NetworkBehaviour
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+        transform.position = new Vector3(0,100,0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(SceneManager.GetActiveScene().name == "Game" && !spawnInGame){
-            spawnInGame = true;
-            SpawnInGame(spawnPoint);
+        if(hasAuthority){
+            if(SceneManager.GetActiveScene().name == "Game" && !spawnInGame){
+                spawnInGame = true;
+                SpawnInGame();
+            }
+            camera.gameObject.SetActive(SceneManager.GetActiveScene().name == "Game");
         }
-        playerObject.SetActive(SceneManager.GetActiveScene().name == "Game");
+        
     }
     public void HandlePlayerNameUpdate(string oldValue, string newValue)
     {
@@ -141,8 +145,8 @@ public class GamePlayer : NetworkBehaviour
         LobbyManager.instance.UpdateUI();
     }
 
-    public void SpawnInGame(Vector3 t){
-        playerObject.transform.position = t;
-        Debug.Log(playerObject.transform.position);
+    public void SpawnInGame(){
+        transform.position = spawnPoint;
+        Debug.Log(transform.position);
     }
 }

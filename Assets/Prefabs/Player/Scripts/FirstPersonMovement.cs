@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
+using UnityEngine.SceneManagement;
 
-public class FirstPersonMovement : MonoBehaviour
+public class FirstPersonMovement : NetworkBehaviour
 {
 
     [Header("GameObjects")]
@@ -35,11 +37,17 @@ public class FirstPersonMovement : MonoBehaviour
     public string crouchKey;
 
     Vector3 velocity; 
+
+    public void Start(){
+        
+    }
     
     private void Update()
     {
 
-        Movement();
+        if(hasAuthority && SceneManager.GetActiveScene().name == "Game"){
+            Movement();
+        }
 
     }
 

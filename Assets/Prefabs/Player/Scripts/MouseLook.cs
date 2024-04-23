@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
+using UnityEngine.SceneManagement;
 
-public class MouseLook : MonoBehaviour
+public class MouseLook : NetworkBehaviour
 {
     [Header("Mouse Sensitivity")]
     public float mouseSensitivity = 100f;
@@ -17,13 +19,22 @@ public class MouseLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    
+        if(!hasAuthority){
+            camera.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         
+        if(hasAuthority && SceneManager.GetActiveScene().name == "Game"){
+            CameraLook();
+        }
+        
+    }
+
+    public void CameraLook(){
         Cursor.lockState = CursorLockMode.Locked;
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
@@ -33,6 +44,5 @@ public class MouseLook : MonoBehaviour
         camera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
         playerBody.Rotate(Vector3.up * mouseX);        
-        
     }
 }
