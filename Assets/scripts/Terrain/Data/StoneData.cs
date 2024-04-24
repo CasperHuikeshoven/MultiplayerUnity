@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu()]
-public class TreesData : ScriptableObject
+public class StoneData : ScriptableObject
 {
 
     public float noiseScale;
@@ -13,13 +13,13 @@ public class TreesData : ScriptableObject
     public float lacunarity;
     public int seed;
     public Vector2 offset;
-    public Tree[] trees;
+    public Stone[] stones;
     
 }
 
 [System.Serializable]
-public class Tree{
-    public GameObject tree;
+public class Stone{
+    public GameObject stone;
     [Range(0,1)]
     public float maxHeight;
     [Range(0,2)]

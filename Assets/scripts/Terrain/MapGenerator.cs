@@ -23,7 +23,7 @@ public class MapGenerator : MonoBehaviour
     
 
     public void Start(){
-        Invoke("GenerateMap", 1f);
+        Invoke("GenerateMap", 0.2f);
     }
 
     public void GenerateMap(){
@@ -55,12 +55,15 @@ public class MapGenerator : MonoBehaviour
                     for(int i = 0; i < treesData.trees.Length; i++){
                         if(treeNoise[x,y] > 0.5f && currentHeight <= treesData.trees[i].maxHeight){
                             float spawnPointY = terrainData.meshHeightCurve.Evaluate(noiseMap[x,y])*terrainData.heightMultiplier;
-                            Vector3 treeSpawnPoint = new Vector3 (topLeftX + x + treeNoise[x,y]*10f, 100f, topLeftZ - y + noiseMap[x,y]*10f);
+                            Vector3 treeSpawnPoint = new Vector3 (topLeftX + x + Mathf.Sin(treeNoise[x,y]*10000f)*2f, 100f, topLeftZ - y + Mathf.Sin(noiseMap[x,y]*10000f)*2f);
                             RaycastHit hit;
                             if (Physics.Raycast(treeSpawnPoint*10f, Vector3.down, out hit, Mathf.Infinity, groundLayerMask) && hit.point.y > 35f)
-                            {
-                                GameObject spawnedObject = Instantiate(treesData.trees[i].tree, hit.point, Quaternion.identity);
-                                spawnedObject.transform.parent = treesList.transform;
+                            { 
+                                if(Mathf.Sin(treeNoise[x,y]*1000f) >= 1f-treesData.trees[i].density){
+                                    GameObject spawnedObject = Instantiate(treesData.trees[i].tree, hit.point, Quaternion.identity);
+                                    spawnedObject.transform.parent = treesList.transform;
+                                }
+                                
                             }
                             break;
                         }

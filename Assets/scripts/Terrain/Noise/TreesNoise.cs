@@ -61,7 +61,7 @@ public static class TreesNoise
         for(int y = 0; y < terrainData.size; y++){
             for(int x = 0; x < terrainData.size; x++){
                 if(terrainData.island) Mathf.Clamp01(treeNoise[x,y] -= falloffMap[x,y]);
-                if(treeNoise[x,y] < 0.5f || treeNoise[x,y] > 0.6f || noiseMap[x,y] > 0.8f || noiseMap[x,y] < 0.4f){
+                if(treeNoise[x,y] < 0.5f || treeNoise[x,y] > 0.7f || noiseMap[x,y] > 0.8f || noiseMap[x,y] < 0.4f){
                     treeNoise[x,y] = 0;
                 }
             }
