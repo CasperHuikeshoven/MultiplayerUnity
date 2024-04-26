@@ -347,12 +347,12 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   controller: {fileID: 1344493715589955797}
-  runSpeed: 12
-  normalSpeed: 6
+  runSpeed: 8
+  normalSpeed: 5
   crouchHeight: 0.5
   normalHeight: 2
-  gravity: -9.81
-  jumpHeight: 10
+  gravity: -19.62
+  jumpHeight: 2
   groundCheck: {fileID: 7763823578883014226}
   groundDistance: 0.4
   groundMask:

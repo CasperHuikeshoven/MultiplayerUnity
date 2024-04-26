@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TerrainData
   m_EditorClassIdentifier: 
   island: 1
-  size: 240
+  size: 120
   heightMultiplier: 25
   meshHeightCurve:
     serializedVersion: 2
@@ -79,7 +79,7 @@ MonoBehaviour:
   octaves: 5
   persistance: 0.433
   lacunarity: 1.87
-  seed: 20
+  seed: 10
   offset: {x: 0, y: 0}
   layers:
   - texture: {fileID: 2800000, guid: 9cfb42e6bded24843ba2e24205278136, type: 3}

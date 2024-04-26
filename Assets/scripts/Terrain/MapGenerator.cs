@@ -65,9 +65,8 @@ public class MapGenerator : MonoBehaviour
                                     Quaternion spawnRotation = Quaternion.Euler(0f, Mathf.Sin(10000f*noiseMap[x,y])*360f, 0f);
                                     GameObject spawnedObject = Instantiate(treesData.trees[i].tree, correctedSpawnPoint, spawnRotation);
                                     spawnedObject.transform.parent = treesList.transform;
-                                }
-                                
-                            }
+                                } 
+                            }                            
                             break;
                         }
                     }
