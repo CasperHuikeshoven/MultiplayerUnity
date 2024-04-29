@@ -14,7 +14,8 @@ public class MouseLook : NetworkBehaviour
 
     float xRotation = 0f;
 
-    public Camera camera; 
+    public GameObject head; 
+    public Camera camera;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +42,7 @@ public class MouseLook : NetworkBehaviour
         xRotation -= mouseY; 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        camera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        head.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
         playerBody.Rotate(Vector3.up * mouseX);        
     }
