@@ -23,7 +23,7 @@ public class MapGenerator : MonoBehaviour
     
 
     public void Start(){
-        Invoke("GenerateMap", 0.2f);
+        Invoke("GenerateMap", 0.5f);
     }
 
     public void GenerateMap(){
