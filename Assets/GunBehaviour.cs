@@ -24,6 +24,7 @@ public class GunBehaviour : NetworkBehaviour
     public void Shoot(){
         GameObject spawnedBullet = Instantiate(guns[0].bullet, guns[0].spawnPoint.position, guns[0].spawnPoint.rotation);
         spawnedBullet.GetComponent<Rigidbody>().velocity = guns[0].spawnPoint.forward * guns[0].bulletVelocity;
+        NetworkServer.Spawn(spawnedBullet, connectionToServer);
         Destroy(spawnedBullet, 5);
     }
 }
