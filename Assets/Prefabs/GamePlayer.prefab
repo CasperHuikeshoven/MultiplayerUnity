@@ -188,8 +188,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8139502717736022963}
   - component: {fileID: 2310281029815389442}
-  - component: {fileID: 6100660779172357163}
-  - component: {fileID: 18339927302147259}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -224,46 +222,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3873176209712771932}
   m_Enabled: 1
---- !u!114 &6100660779172357163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3873176209712771932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  serverOnly: 0
-  visible: 0
-  m_AssetId: d5ebc752c19faee42b19b97bcb0145e8
-  hasSpawned: 0
---- !u!114 &18339927302147259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3873176209712771932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  clientAuthority: 1
-  localPositionSensitivity: 0.01
-  localRotationSensitivity: 0.01
-  localScaleSensitivity: 0.01
-  compressRotation: 0
-  interpolatePosition: 1
-  interpolateRotation: 1
-  interpolateScale: 1
-  syncScale: 1
 --- !u!1 &4987025582925042925
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +448,7 @@ GameObject:
   - component: {fileID: 6501718436733476139}
   - component: {fileID: 1344493715589955797}
   - component: {fileID: 4929397803187120259}
+  - component: {fileID: 3949598218648575879}
   m_Layer: 0
   m_Name: GamePlayer
   m_TagString: Untagged
@@ -653,7 +612,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!114 &4929397803187120259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,6 +634,30 @@ MonoBehaviour:
       type: 3}
     bulletVelocity: 50
   shootKey: 
+--- !u!114 &3949598218648575879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6141406830019278485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 734b48bea0b204338958ee3d885e11f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  clientAuthority: 0
+  localPositionSensitivity: 0.01
+  localRotationSensitivity: 0.01
+  localScaleSensitivity: 0.01
+  compressRotation: 0
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  syncScale: 1
+  target: {fileID: 8139502717736022963}
 --- !u!1 &7316409033367254933
 GameObject:
   m_ObjectHideFlags: 0
