@@ -489,6 +489,7 @@ GameObject:
   - component: {fileID: 3480154684583591455}
   - component: {fileID: 6501718436733476139}
   - component: {fileID: 1344493715589955797}
+  - component: {fileID: 4929397803187120259}
   m_Layer: 0
   m_Name: GamePlayer
   m_TagString: Untagged
@@ -653,6 +654,27 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4929397803187120259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6141406830019278485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f09c41d2f3ccc4490200fcbe7dc9c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  guns:
+  - gun: {fileID: 7887831718272286609}
+    spawnPoint: {fileID: 388887643341461222}
+    bullet: {fileID: 8490373349463612832, guid: 5438bdcb0982e7c4fac33304e9de2779,
+      type: 3}
+    bulletVelocity: 50
+  shootKey: 
 --- !u!1 &7316409033367254933
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,11 +874,7 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 388887643341461222}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4311248730837266121, guid: c20daf91d2bce304c85fec03f5fafd3b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9106324546015471857}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c20daf91d2bce304c85fec03f5fafd3b, type: 3}
 --- !u!4 &7367015477330961707 stripped
 Transform:
@@ -870,19 +888,3 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6242997091090895192}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9106324546015471857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7887831718272286609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4f09c41d2f3ccc4490200fcbe7dc9c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 388887643341461222}
-  bullet: {fileID: 8490373349463612832, guid: 5438bdcb0982e7c4fac33304e9de2779, type: 3}
-  bulletVelocity: 200
-  shootKey: 
