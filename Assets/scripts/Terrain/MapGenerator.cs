@@ -24,6 +24,7 @@ public class MapGenerator : MonoBehaviour
 
     public void Start(){
         Invoke("GenerateMap", 0.5f);
+        GenerateMap();
     }
 
     public void GenerateMap(){

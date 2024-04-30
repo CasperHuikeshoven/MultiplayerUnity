@@ -16,7 +16,7 @@ MonoBehaviour:
   octaves: 2
   persistance: 0.496
   lacunarity: 1.68
-  seed: 0
+  seed: 102
   offset: {x: 0, y: 0}
   trees:
   - tree: {fileID: 3853189962160737498, guid: 30f00672d84b6ae4ea673eb5cae4f72e, type: 3}
