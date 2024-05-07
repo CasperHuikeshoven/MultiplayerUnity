@@ -17,8 +17,10 @@ public class GamePlayer : NetworkBehaviour
     [SyncVar] public bool IsGameLeader = false;
     [SyncVar(hook = nameof(HandlePlayerReadyStatusChange))] public bool isPlayerReady;
     [SyncVar] public ulong playerSteamId;
+    
     [Header("Player")]
     public Camera camera;
+    [SyncVar] public float health;
     
     [Header("Spawn")]
     private bool spawnInGame; 

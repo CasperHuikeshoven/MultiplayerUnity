@@ -15,16 +15,6 @@ public class MouseLook : NetworkBehaviour
     float xRotation = 0f;
 
     public GameObject head; 
-    public Camera camera;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        if(!hasAuthority){
-            camera.gameObject.SetActive(false);
-        }
-    }
-
     // Update is called once per frame
     void Update()
     {
